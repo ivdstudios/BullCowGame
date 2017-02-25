@@ -38,7 +38,7 @@ public:
     void Reset(); // TODO make a more rich value.
     EGuessStatus CheckGuessValidity(FString) const; // TODO make a more rich return value.
     // counts bulls & cows, and increases turn number # assuming valid guess
-    FBullCowCount SubmitGuess(FString);
+    FBullCowCount SubmitValidGuess(FString);
 
 // Please try and ignore this and focus on the interface about ^^
 private:
@@ -46,6 +46,9 @@ private:
     int32 MyCurrentTry;
     int32 MyMaxTries;
     FString MyHiddenWord;
+    bool bGameIsWon;
+
+    bool IsIsogram(FString) const;
 };
 
 #endif //BULLCOWGAME_FBULLCOWGAME_H
