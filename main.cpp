@@ -46,8 +46,15 @@ bool AskToPlayAgain()
 void PrintIntro()
 {
     std::cout << "Welcome to Bulls and Cows, a fun word game.\n";
-    std::cout << "Can you guess the " << BCGame.GetHiddenWorldLength();
-    std::cout << " letter Isogram  I'm thinking of?\n";
+    std::cout << std::endl;
+    std::cout << "          }   {         ___ " << std::endl;
+    std::cout << "          (o o)        (o o) " << std::endl;
+    std::cout << "   /-------\\ /          \\ /-------\\ " << std::endl;
+    std::cout << "  / | BULL |O            O| COW  | \\ " << std::endl;
+    std::cout << " *  |-,--- |              |------|  * " << std::endl;
+    std::cout << "    ^      ^              ^      ^ " << std::endl;
+    std::cout << "Can you guess the " << BCGame.GetHiddenWordLength();
+    std::cout << " letter isogram I'm thinking of?\n";
     std::cout << std::endl;
     return;
 }
@@ -92,7 +99,7 @@ FText GetValidGuess()  // TODO change to valid guess
         switch (Status)
         {
             case EGuessStatus::Wrong_Length:
-                std::cout << "Please enter a " << BCGame.GetHiddenWorldLength() << " letter word.\n";
+                std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word.\n";
                 break;
             case EGuessStatus::NOT_Isogram:
                 std::cout << "Please enter a word without repeating letters.\n";

@@ -32,7 +32,7 @@ public:
 
     int32 GetMaxTries() const;
     int32 GetCurrentTry() const;
-    int32 GetHiddenWorldLength() const;
+    int32 GetHiddenWordLength() const;
     bool IsGameWon() const;
 
     void Reset(); // TODO make a more rich value.
@@ -49,6 +49,7 @@ private:
     bool bGameIsWon;
 
     bool IsIsogram(FString) const;
+    bool IsLowercase(FString) const;
 };
 
 #endif //BULLCOWGAME_FBULLCOWGAME_H
