@@ -1,16 +1,13 @@
-//
-// Created by Abhimanyu Aryan on 19/02/17.
-//
+/* The game logic (no view code or direct user interaction
+ * The game is a simple guess the word based on Mastermind
+ */
 
-#ifndef BULLCOWGAME_FBULLCOWGAME_H
-#define BULLCOWGAME_FBULLCOWGAME_H
-
+#pragma once
 #include <string>
 
 using FString = std::string;
 using int32 = int;
 
-// all values initialized to zero
 struct FBullCowCount
 {
     int32 Bulls = 0;
@@ -35,21 +32,17 @@ public:
     int32 GetHiddenWordLength() const;
     bool IsGameWon() const;
 
-    void Reset(); // TODO make a more rich value.
-    EGuessStatus CheckGuessValidity(FString) const; // TODO make a more rich return value.
-    // counts bulls & cows, and increases turn number # assuming valid guess
+    void Reset();
+    EGuessStatus CheckGuessValidity(FString) const;
     FBullCowCount SubmitValidGuess(FString);
 
 // Please try and ignore this and focus on the interface about ^^
 private:
     // see construction for initialization
     int32 MyCurrentTry;
-    int32 MyMaxTries;
     FString MyHiddenWord;
     bool bGameIsWon;
 
     bool IsIsogram(FString) const;
     bool IsLowercase(FString) const;
 };
-
-#endif //BULLCOWGAME_FBULLCOWGAME_H
